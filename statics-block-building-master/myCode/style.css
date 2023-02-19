@@ -1,0 +1,219 @@
+body{
+    background-color: rgb(217, 243, 255);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5,1fr);
+    margin-top: 1em;
+    height: 700px;
+}
+
+#main{
+    position: relative;
+    grid-row: 1/2;
+    grid-column: 1/5;
+}
+
+#room{
+    /* position: relative;
+    grid-row: 1/2;
+    grid-column: 1/5; */
+}
+
+#checkareaContainer{
+    height:500px;
+}
+
+#checkarea{
+    position: fixed;
+    background-color: rgb(229, 235, 232);
+    width:300px;
+    height: 700px;
+    border-top: 5px #00a8be dashed;
+    border-left: 5px #00a8be dashed;
+    border-right: 5px #00a8be dashed;
+    border-bottom: 5px #00a8be dashed;
+    overflow-wrap: break-word;
+    margin-left: 20px;
+}
+
+.blocklyTreeLabel{
+    font-family: "Arial","Yu Gothic";
+    font-weight: 700;
+}
+
+.desk{
+    display: grid;
+    grid-template-rows: 56px 300px 100px 40px;
+    grid-template-columns: 40px repeat(4,1fr);
+    margin-top: 1em;
+}
+
+.title{
+    grid-row: 1/2;
+    grid-column: 2/6;
+    background-color: rgb(217, 205, 170);
+}
+
+.blocklyDiv{
+    grid-row: 2/3;
+    grid-column: 1 /6;
+}
+
+.codebox{
+    grid-row: 3/4;
+    grid-column: 1 /6;
+    resize:none;
+}
+
+/* button{
+    border: none;
+    background: transparent;
+} */
+
+.arrow{
+    position: relative;
+    grid-row: 1 /2;
+    grid-column: 1 /2;
+    padding: 0 0 0 16px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+}
+.arrow::before,
+.arrow::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.enBtn::before{
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+    background: rgb(255, 150, 14);
+    box-shadow: 0 5px 0 #333;
+}
+
+.enBtn:hover:before{
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+    background: rgb(201, 118, 11);
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+
+.enBtn::after{
+    left: 10px;
+    box-sizing: border-box;
+    width: 24px;
+    height: 16px;
+    border: 12px solid transparent;
+    border-left: 18px solid rgb(255, 242, 236);
+}
+
+.enBtn:hover:after{
+    left: 10px;
+    box-sizing: border-box;
+    width: 24px;
+    height: 16px;
+    border: 12px solid transparent;
+    border-left: 18px solid rgba(236, 224, 219, 0.705);
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+
+.copyB {
+    position: relative;
+    grid-row: 4/5;
+    grid-column: 4/5;
+    --color: #e29946;
+    font-family: inherit;
+    display: auto;
+    width: 100%;
+    height: 100%;
+    line-height: 2.5em;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--color);
+   }
+   
+   .copyB:hover {
+    color: #fff;
+    background-color: #e6ad88;
+   }
+
+   .pasteB {
+    position: relative;
+    grid-row: 4/5;
+    grid-column: 5/6;
+    --color: #e29946;
+    font-family: inherit;
+    display: auto;
+    width: 100%;
+    height: 100%;
+    line-height: 2.5em;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--color);
+   }
+   
+   .pasteB:hover {
+    color: #fff;
+    background-color: #e6ad88;
+   }
+   
+ 
+
+.consolearea{
+    position: relative;
+    grid-row: 5/6;
+    grid-column: 1/6;
+    background-color:Lavender;
+}
+
+.plus{
+    display: inline-block;
+    outline: 0;
+    text-align: center;
+    cursor: pointer;
+    height: 34px;
+    padding: 0 10px;
+    color: rgb(46, 46, 46);
+    vertical-align: top;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    transition: all .3s ease;
+    background: #70707000;
+    border-color: #00000000;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 16px;
+    font-size: 30px;
+}
+.plus:hover {
+    background: #6e6e6e;
+    border-color: #6e6e6e;
+}
+

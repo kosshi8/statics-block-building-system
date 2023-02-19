@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="description" content="jp270405060104000318301655406satxdasyhs7">
+        <link rel="stylesheet" href="style.css">
+        <title>統計を題材とした批判的思考訓練支援システム</title>
+        <!-- Blocklyのライブラリ -->
+        <script type="text/javascript" src="../blockly_compressed.js"></script>
+        <script src="../blocks_compressed.js"></script>
+        <script src="../javascript_compressed.js"></script>
+        
+        <script src="../msg/js/en.js"></script>
+        <script src="z_registerSetup.js"></script>
+        <script src="z_stealData.js"></script>
+        <script src="z_userEvent.js"></script>
+        <script src="z_visualization.js"></script>
+        <!-- 自作ブロックの定義 -->
+        <script src="myblock2.js"></script>
+
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+
+    <body onload="start()">
+        <!-- roomに最初のdeskを定義 -->
+        <div id="main">
+            <div id="room">
+                <div>液晶テレビの売れ行きが悪くなった原因について考えてみよう</div>
+                <div id="desk1" class="desk">
+                    <input type="text" id="t1" class="title" size="50" placeholder="title">
+                    <div id="blocklyDiv1" class="blocklyDiv" style="height: 400px; "></div>
+                    <textarea id="codebox1" class="codebox"style="height: 100px;"></textarea>
+                    <button id="b1" class="arrow enBtn" onclick="doCode(1)"></button>
+                    <button id="bt1" class="copyB" onclick="copyW(1)">Copy</button>
+                    <button id="bt1" class="pasteB" onclick="diagnose(1)">診断</button>
+                    <!-- <div id="consolearea1" class="consolearea"><div id="unti"></div><div id="unti2"></div></div> -->
+                </div>
+            </div>
+            <input type="button" value="+" class="plus"onclick="addWorkspace()">
+            <!-- テストボタン -->
+            <input type="button" value="d3" onclick="AAA()">
+            <input id="huhuh"type="button" value="jijiji" onclick="toi()">
+        </div>
+        <div id="checkareaContainer">
+            <div id="checkarea">
+                
+            </div>
+        </div>
+
+        <!-- ツールボックスの定義 -->
+        <div id="toolbox">
+            <category class="catego" name="仮説" categoryStyle="c1">
+                <!-- <block type="hypo"></block>
+                     <block type="hypo2"></block> -->
+                <block type="tv"></block>
+                <block type="_2t1"></block>
+                <block type="_2t2"></block>
+                <block type="_2t3"></block>
+                <block type="_3t1"></block>
+                <block type="_3t2"></block>
+            </category>
+            <category class="catego" name="データ" categoryStyle="c2">
+                <!-- <block type="setodata"></block>
+                     <block type="time"></block>
+                     <block type="area"></block>
+                     <block type="setadata"></block>
+                     <block type="dataname"></block>
+                     <block type="timefromto"></block>
+                     <block type="filter"></block>
+                     <block type="number"></block> -->
+                <label text="使えるData" web-class="myLabelStyle"></label>
+                <block type="data1"></block>
+                <block type="data2"></block>
+                <block type="data3"></block>
+                <block type="data4"></block>
+                <block type="data5"></block>
+                <block type="data6"></block>
+                <block type="data7"></block>
+            </category>
+            <category class="catego" name="分析" categoryStyle="c3">
+                <block type="visualizedata"></block>
+                <block type="vivi"></block>
+                <block type="bunseki"></block>
+                <block type="bunseki1"></block>
+                <block type="bunseki3"></block>
+                <block type="bunseki4"></block>
+            </category>
+            <!-- <category class="catego" name="結論" categoryStyle="c4">
+                 <block type="conc"></block>
+                 </category> -->
+            <category class="catego" name="使ったブロック" categoryStyle="c5" custom="COLOUR_PALETTE"></category>
+        </div>
+
+        <!-- 初期表示ブロック -->
+        <div id="startBlocks" style="display: none">
+            <block type="tv" id="|e}3!]6oI^4H:QR*fXtu" x="12" y="38">
+                <statement name="root">
+                    <block type="_2t1" id="5a?nA6Rk=Y}!C~I)67w`">
+                        <field name="flag">d</field>
+                        <statement name="s210">
+                            <block type="data1" id="3ottnu[#/vX[i;B2~BP)"></block>
+                        </statement>
+                        <statement name="s211">
+                            <block type="bunseki" id="HdOfJ[v6B~):%;9x9^vF"></block>
+                        </statement>
+                        <statement name="s213">
+                            <block type="_3t1" id="Kz9kdO+5l3?EVVHJ5l?x">
+                                <field name="NAME">d</field>
+                                <statement name="s310">
+                                    <block type="data5" id="?:nrnkzeR!LA03OOd(x?"></block>
+                                </statement>
+                                <statement name="s311">
+                                    <block type="bunseki3" id="];8/Jhd7KHbN2U]rO0Kf"></block>
+                                </statement>
+                                <next>
+                                    <block type="_3t2" id="B7RqjrO*/6TaYs^W3/?2">
+                                        <field name="NAME">d</field>
+                                        <statement name="s320">
+                                            <block type="data6" id="9D$Ck[]}DzIP8%hoZbrr"></block>
+                                        </statement>
+                                        <statement name="s321">
+                                            <block type="bunseki" id="P,Hl!OjW+.Y1t{tdQ-/T"></block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="_2t2" id="qf-9ClB$fC~!pKjt-p]r">
+                                <field name="NAME">d</field>
+                                <statement name="s220">
+                                    <block type="data2" id="LA:X$??+,biH[r-Uu5,+"></block>
+                                </statement>
+                                <statement name="s221">
+                                    <block type="bunseki3" id="E.wM%5pfweJw$;s|%Z{S"></block>
+                                </statement>
+                                <next>
+                                    <block type="_2t3" id="lMbMh[SxKsDVcN7lEHev">
+                                        <field name="NAME">d</field>
+                                        <statement name="s230">
+                                            <block type="data3" id="e,,]nxqif|!pec;*1$d6">
+                                                <next>
+                                                    <block type="data4" id="wFk$y?8%}$hQDJ!%MPrW"></block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                        <statement name="s231">
+                                            <block type="bunseki1" id="Nd8h[lQA@g0h6Ia,f`G+"></block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </div>
+
+
+        </script>
+        <!-- d3:DOM操作やsvgでの可視化で役立つライブラリ -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    </body>
+</html>
+

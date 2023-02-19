@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<head lang="ja">
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="{{ url_for('static', filename='sample.js') }}"></script>
+  <title>ここはサブページ</title>
+</head>
+
+<h1>サブページ</h1>
+
+<br>
+<span>s_formの中身:</span><br>
+{{ s_form }}
+
+<br>
+<a href="{{ url_for("index") }}">Topページへ</a>
+<iframe src="http://127.0.0.1:5000/map" width="500" height="500">

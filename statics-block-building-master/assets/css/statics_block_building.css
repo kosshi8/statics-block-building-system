@@ -1,0 +1,236 @@
+body {
+    /* 全体 */
+    background-color: rgb(217, 243, 255);
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 1em;
+    height: 100vh;
+    width: 100vw;
+}
+
+#main {
+    margin-left: 20px;
+    position: relative;
+}
+
+
+#feedback_area_container {
+    position: relative;
+}
+
+#feedback_area {
+    /* フィードバックコメントがでるエリア */
+    background-color: rgb(229, 235, 232);
+    position: fixed;
+    width: 20vw;
+    height: 80vh;
+    overflow: scroll;
+    border: 5px #00a8be dashed;
+
+    overflow-wrap: break-word;
+    margin-left: 20px;
+    padding: 10px;
+    left: 75vw;
+}
+
+
+#sbb_workspace_message_dialog {
+    /* フェードするメッセージウィンドウ */
+    position: fixed;
+    display: none;
+    background-color: #4169e1;
+    opacity: 98%;
+    width: 100%;
+    z-index: 100;
+    width: 100%;
+    height: 5em;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
+
+.statics_block_building {
+    /* SBBのワークスペースを複数挿入するターゲットの設定 */
+    height: 30vh;
+    width: 70vw;
+}
+
+.sbb_workspace {
+    /* SBBのワークスペース1つ分 */
+    /* 作業領域の白い部分の高さなどはこれで決める */
+    height: 500px; 
+    width: 100%;
+    position: relative;
+    margin-bottom: 530px;
+}
+
+.injectionDiv {
+    /* blocklyのワークスペースのメインの部分 */
+    margin-bottom: 20px;
+    height: 85%;
+}
+
+.blocklyTrash {
+    /* ブロックを削除するゴミ箱アイコン */
+    z-index: 10;
+}
+
+.sbb_workspace_title_area {
+    /* SBBのワークスペースのタイトルエリアの設定 */
+    display: flex;
+    height: 50px;
+    width: calc(100% - 50px);
+    margin-bottom: 20px;
+}
+
+.sbb_workspace_title_input {
+    /* タイトルの入力エリア */
+    position: relative;
+    background-color: rgb(217, 205, 170);
+    width: 100%;
+    left: 30px;
+    top: 5px;
+    padding-left: 20px;
+}
+
+
+
+/*** ここからタイトルボタンの設定 ***/
+.sbb_workspace_title_button_arrow {
+    position: relative;
+    padding: 0 0 0 16px;
+    border: none;
+    background: transparent;
+}
+
+.sbb_workspace_title_button_arrow::before,.sbb_workspace_title_button_arrow::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.sbb_workspace_title_button_btn::before {
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+    background: rgb(255, 150, 14);
+    box-shadow: 0 5px 0 #333;
+}
+
+.sbb_workspace_title_button_btn:hover:before {
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+    background: rgb(201, 118, 11);
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+
+.sbb_workspace_title_button_btn::after {
+    left: 10px;
+    box-sizing: border-box;
+    width: 24px;
+    height: 16px;
+    border: 12px solid transparent;
+    border-left: 18px solid rgb(255, 242, 236);
+}
+
+.sbb_workspace_title_button_btn:hover:after {
+    left: 10px;
+    box-sizing: border-box;
+    width: 24px;
+    height: 16px;
+    border: 12px solid transparent;
+    border-left: 18px solid rgba(236, 224, 219, 0.705);
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #333;
+}
+/*** ここまでタイトルボタンの設定 ***/
+
+
+/*** ここからコードボックス周りのDiv処理 ***/
+.sbb_workspace_codebox_area {
+    position: relative;
+    width: 98%;
+    margin: 0;
+}
+
+
+.sbb_workspace_codebox {
+    /* SBBのワークスペースのコードボックスの設定 */
+    position: relative;
+    padding: 10px;
+    line-height: 1.5;
+    height: 5em;
+    width: 100%;
+    color: #FFF;
+    top: 10px;
+    margin: auto;
+    right: 0px;
+    color: black;
+    /* display: none; */
+}
+
+.sbb_workspace_codebox_display {
+    position: relative;
+    display: flex;
+    border: 1px solid;
+    border-radius: 10px;
+    height: 300px;
+    width: 100%;
+    padding: 10px;
+    overflow: scroll;
+}
+
+
+/*** ここからコピー/ペースト/診断ボタン ***/
+.sbb_workspace_copy_btn, .sbb_workspace_paste_btn, .sbb_workspace_diagnose_btn {
+    position: relative;
+    width: 5em;
+    line-height: 2.5em;
+    border: 2px solid #e29946;
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #e29946;
+    margin-right: 20px;
+}
+
+.sbb_workspace_copy_btn:hover, .sbb_workspace_paste_btn:hover, .sbb_workspace_diagnose_btn:hover {
+    color: #fff;
+    background-color: #e6ad88;
+}
+/*** ここまでコピー/ペースト/診断ボタン ***/
+
+
+
+/*** ワークスペース追加ボタン ***/
+.sbb_workspace_add_new_workspace_btn {
+    position: relative;
+    line-height: 2.5em;
+    font-size: 17px;
+
+    background-color: #98fb98;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.sbb_workspace_remove_workspace_btn {
+    position: relative;
+    line-height: 2.5em;
+    font-size: 17px;
+
+    background-color: salmon;
+    border-radius: 6px;
+    width: 11em;
+}
+
